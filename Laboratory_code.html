@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAIKRUPA - The Laboratory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&amp;family=Noto+Serif:wght@200;300&amp;family=Space+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#757873",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#8d6d2b",
+                        "primary-fixed-dim": "#c7c7c3",
+                        "primary-fixed": "#e3e2df",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-primary": "#c7c7c3",
+                        "outline-variant": "#c5c7c1",
+                        "surface-tint": "#5e5f5c",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#5f5e5e",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "on-tertiary-fixed": "#261900",
+                        "on-primary-fixed": "#1b1c1a",
+                        "primary": "#5e5f5c",
+                        "primary-container": "#f9f8f4",
+                        "on-primary-fixed-variant": "#464744",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-fixed-variant": "#474646",
+                        "secondary-container": "#e5e2e1",
+                        "background": "#f9f9f9",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#454843",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "tertiary": "#775a19",
+                        "secondary-fixed": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#71726f",
+                        "tertiary-container": "#fff7ef",
+                        "surface-container-low": "#f4f3f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#656464",
+                        "tertiary-fixed": "#ffdea5",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "border-width": "0.5px",
+                        "margin-page": "64px",
+                        "element-gap": "24px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "technical-data": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-airy": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "200" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                        "technical-data": ["14px", { "lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-airy": ["16px", { "lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "300" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A; /* Obsidian Black override for dark mode */
+            color: #f1f1f1;
+        }
+
+        @keyframes glideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes hudPulse {
+            0% { border-top-color: #e9c176; box-shadow: 0 -2px 15px rgba(233, 193, 118, 0); }
+            50% { border-top-color: #ffdea5; box-shadow: 0 -2px 25px rgba(233, 193, 118, 0.15); }
+            100% { border-top-color: #e9c176; box-shadow: 0 -2px 15px rgba(233, 193, 118, 0); }
+        }
+
+        .bento-card {
+            background-color: #121212;
+            border: 0.5px solid #757873; /* outline */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: glideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .bento-card:nth-child(1) { animation-delay: 0.1s; }
+        .bento-card:nth-child(2) { animation-delay: 0.2s; }
+        .bento-card:nth-child(3) { animation-delay: 0.3s; }
+        .bento-card:nth-child(4) { animation-delay: 0.4s; }
+        .bento-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .bento-card:hover .data-hud {
+            opacity: 1;
+            transform: translateY(0);
+            animation: hudPulse 2s infinite ease-in-out;
+        }
+        .bento-card:hover .blueprint-overlay {
+            opacity: 0.2;
+        }
+        .data-hud {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(4px);
+            border-top: 0.5px solid #e9c176; /* gold accent */
+        }
+        
+        .tech-annotation {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+            display: inline-block;
+        }
+        
+        .bento-card:hover .tech-annotation {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .blueprint-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-image: linear-gradient(#e9c176 0.5px, transparent 0.5px), linear-gradient(90deg, #e9c176 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            mix-blend-mode: overlay;
+        }
+        .btn-primary {
+            border: 0.5px solid #e9c176;
+            color: #e9c176;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #e9c176;
+            transition: transform 0.3s ease-out;
+            z-index: -1;
+        }
+        .btn-primary:hover {
+            color: #0A0A0A;
+        }
+        .btn-primary:hover::before {
+            transform: translateX(100%);
+        }
+        .gold-accent { color: #e9c176; }
+        .silver-accent { color: #c7c7c3; }
+    </style>
+</head>
+<body class="font-body-airy min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-display-xl text-display-xl text-label-caps font-label-caps docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center w-full px-margin-page py-unit h-20 max-w-full mx-auto z-50 sticky">
+<div class="flex items-center">
+<img alt="SAIKRUPA Engineering Works" class="h-10 w-auto object-contain mix-blend-difference dark:invert-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0ujBGL3PkDmciu5cNLSB_HVnn_uFE10NJsgslSTBae-oAJPtchGty5cypnUptaifSBw9MVaJofQI1dGOshXWNTA1f7XwBrUAr4025InEIXFj2yT8qS8po4AfYuXXPSbtRbkM1ruuXwC-jrliO6St36SiLCBO96Z3wM3KNF1Qm_zDZ6PndkUw6C6ujaX4AA3O9Mt082bII_fN3pAnFyPfbtmggAtNZwJHhgWyPzkyfiDZNG5VrnEIJ1NdFLneULAfrc1x_NwKydf8vw"/>
+</div>
+<div class="hidden md:flex items-center gap-element-gap">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">The Heritage</a>
+<a class="text-primary dark:text-tertiary-fixed-dim border-b-[0.5px] border-primary dark:border-tertiary-fixed-dim pb-1 opacity-80 transition-opacity hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">The Laboratory</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">Technical Briefing</a>
+</div>
+<div class="flex items-center gap-unit">
+<button class="font-label-caps text-label-caps px-4 py-2 border-[0.5px] border-outline hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300">Technical Consultation</button>
+<button class="hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300 flex items-center justify-center p-2">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-page py-section-gap">
+<!-- Header Section -->
+<header class="mb-element-gap flex justify-between items-end border-b-[0.5px] border-outline pb-unit">
+<div>
+<h1 class="font-display-xl text-display-xl text-inverse-on-surface">Precision Matrix</h1>
+<p class="font-technical-data text-technical-data text-outline mt-unit uppercase tracking-widest">Sys. 04 // Macro-Analysis View</p>
+</div>
+<div class="text-right">
+<p class="font-technical-data text-technical-data gold-accent">STATUS: ONLINE</p>
+<p class="font-technical-data text-technical-data silver-accent mt-1">TOLERANCE: ±0.005MM</p>
+</div>
+</header>
+<!-- Bento Grid Laboratory -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-[0.5px] bg-outline mt-12 p-[0.5px]">
+<!-- Item 1: Large Feature -->
+<div class="bento-card md:col-span-8 min-h-[400px] flex flex-col justify-end p-0">
+<div class="absolute inset-0 z-0">
+<img alt="Precision machined aerospace component" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="A macro photograph of a highly polished, complex machined metal part, likely for aerospace. Lighting is clinical, high-contrast, casting sharp reflections on the milled surfaces. The background is pure obsidian black. The aesthetic is industrial luxury, focusing on the microscopic precision of the metallic textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMXvKdpeXB5RMy_3V6cVhRzjlDVCbPHNWUOSgK5LuYUm5Qwr0Qha14Fcmb1c7LecYoYSHTYHr5iQmM37SMfJQTa01fnSJQUzHpcH-7ce4sF_Tf81BexNKcm1zWrx5A4nbR32V5TF0c7aKn9SWxSu0ONF8mVCpfK0v8IQbk--FYHxQR18oIb5nOB5ll78XrlEPz9PuOlTOZocSHiOFDvgoYJOqMVlFQTOSEEDP2DIkt-DlRVX6DFXxaj0gxim0FbWhvrpA_1xCHRsM"/>
+<div class="blueprint-overlay absolute inset-0"></div>
+</div>
+<div class="data-hud p-element-gap w-full z-10">
+<div class="flex justify-between items-start mb-unit">
+<h3 class="font-label-caps text-label-caps gold-accent">Aero-Turbine Casing</h3>
+<span class="font-technical-data text-technical-data silver-accent">ID: TX-904 <span class="tech-annotation text-outline ml-2 text-xs">[SYNCED]</span></span>
+</div>
+<div class="grid grid-cols-3 gap-unit border-t-[0.5px] border-outline pt-unit">
+<div>
+<p class="font-label-caps text-label-caps text-outline">Material</p>
+<p class="font-technical-data text-technical-data">Titanium Gr 5</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-outline">Surface Finish</p>
+<p class="font-technical-data text-technical-data">Ra 0.4 μm</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-outline">Concentricity</p>
+<p class="font-technical-data text-technical-data gold-accent">0.002mm</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Data Panel -->
+<div class="bento-card md:col-span-4 p-element-gap flex flex-col">
+<div class="border-b-[0.5px] border-outline pb-unit mb-unit flex justify-between items-center">
+<h3 class="font-label-caps text-label-caps silver-accent">Telemetry Sync</h3>
+<span class="material-symbols-outlined text-outline" style="font-size: 16px;">sensors</span>
+</div>
+<div class="flex-grow flex flex-col justify-center space-y-element-gap">
+<div>
+<p class="font-label-caps text-label-caps text-outline">CMM Measurement Delta</p>
+<div class="flex items-end gap-2 mt-1">
+<span class="font-display-xl text-headline-lg gold-accent leading-none">-0.0014</span>
+<span class="font-technical-data text-technical-data text-outline pb-1">mm <span class="tech-annotation gold-accent ml-1 text-xs">▲ WITHIN SPEC</span></span>
+</div>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-outline">Thermal Expansion Factor</p>
+<div class="w-full h-[0.5px] bg-outline mt-2 relative">
+<div class="absolute top-0 left-0 h-[0.5px] bg-[#e9c176] w-[23%]"></div>
+<div class="absolute -top-1 left-[23%] w-2 h-2 bg-[#e9c176] rounded-full shadow-[0_0_8px_#e9c176]"></div>
+</div>
+<p class="font-technical-data text-technical-data text-right mt-1 silver-accent">Nominal</p>
+</div>
+</div>
+</div>
+<!-- Item 3: Macro Detail -->
+<div class="bento-card md:col-span-4 min-h-[300px] flex flex-col justify-end p-0">
+<div class="absolute inset-0 z-0">
+<img alt="Microscopic view of milling tool path" class="w-full h-full object-cover opacity-70 mix-blend-luminosity" data-alt="Extreme macro photography of a metal surface showing the subtle concentric rings of a milling tool path. Lighting is angled to highlight the texture. The image has a dark, moody, industrial aesthetic with stark contrasts between the lit peaks and dark valleys of the machined metal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDTACUi5QLB-E895h9NB-f0Y6Ur9i6GEUWhMnxdbR8Cj0U9nlIzHk7HVuvjpZhIwQjsNzzF0-zaIskU1IAhCc6LW9HajlwDExi5-TL4LofnApqF0o0bf6e1BMbdLmydGZvh-d45yAMii8K6fcATnBnMUtrWI0IANsNAlYUsXaH4SV17sE9GaeYp9zhYfcO4RLPfZwKzGZT0tij4UIpBKt73VJjIHVpwmf2ZfqRvjXkxcSKamAtjjQg6Szf42FMxMRBA9ahXRfUH-I"/>
+<div class="blueprint-overlay absolute inset-0"></div>
+</div>
+<div class="data-hud p-unit w-full z-10">
+<h3 class="font-label-caps text-label-caps silver-accent">Micro-Structuring</h3>
+<p class="font-technical-data text-technical-data text-outline mt-1">Path Alg: Spiral V2.1 <span class="tech-annotation gold-accent text-xs ml-2">OPTIMIZED</span></p>
+</div>
+</div>
+<!-- Item 4: Macro Detail -->
+<div class="bento-card md:col-span-4 min-h-[300px] flex flex-col justify-end p-0">
+<div class="absolute inset-0 z-0">
+<img alt="Gold plated connector pins" class="w-full h-full object-cover opacity-80" data-alt="Close up of heavily gold-plated electronic connector pins set against a matte black background. The gold catches the light brilliantly, emphasizing the high-end, luxury nature of the precision component. The focus is incredibly sharp on the tip of one pin, dropping off to a smooth blur in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN8LCsmQAuPewl0_CwYQYyZIOpoyEwaNV-ee5QTis3deCSNDIdMQSBcdv5ukeW1AqgsbJhRS3TZupoJ2fGgAk9OxlVVlcCGBPTivqB5-3_gnh-UooO7qdWuq1yHZevNTKeE_dnrQMAHQijsGNJAFNqQL1694NVXfJIdy1V1-uIo_m1Xm9M66RMwTev3iIP1EtB2kwAqlH8j9LgSWNdTgx4Ugu1NMqU2ZocACxG70kTE3PC7g3fWUa5d4Y4mKxYpb5c8TfuAgtgfGQ"/>
+<div class="blueprint-overlay absolute inset-0"></div>
+</div>
+<div class="data-hud p-unit w-full z-10 border-t-[0.5px] border-[#c7c7c3]">
+<h3 class="font-label-caps text-label-caps gold-accent">Conductive Interface</h3>
+<p class="font-technical-data text-technical-data text-outline mt-1">Au Plating: 50μin <span class="tech-annotation silver-accent text-xs ml-2">VERIFIED</span></p>
+</div>
+</div>
+<!-- Item 5: Action/Specs -->
+<div class="bento-card md:col-span-4 p-element-gap flex flex-col justify-between">
+<div>
+<h3 class="font-label-caps text-label-caps text-outline mb-unit">Batch Documentation</h3>
+<ul class="space-y-2">
+<li class="flex justify-between border-b-[0.5px] border-outline pb-1">
+<span class="font-technical-data text-technical-data silver-accent">Cert of Conformance</span>
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">check</span>
+</li>
+<li class="flex justify-between border-b-[0.5px] border-outline pb-1">
+<span class="font-technical-data text-technical-data silver-accent">Material Traceability</span>
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">check</span>
+</li>
+<li class="flex justify-between border-b-[0.5px] border-outline pb-1">
+<span class="font-technical-data text-technical-data silver-accent">Inspection Rpt CMM-A</span>
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">download</span>
+</li>
+</ul>
+</div>
+<button class="btn-primary font-label-caps text-label-caps py-unit px-element-gap w-full mt-element-gap z-10 text-center">
+                    DOWNLOAD FULL DOSSIER
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-technical-data text-technical-data font-label-caps text-label-caps docked full-width bottom-0 border-t border-outline-variant dark:border-outline flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-margin-page py-element-gap gap-unit Transition-all duration-500 ease-in-out">
+<div class="font-display-xl text-label-caps text-on-surface dark:text-inverse-on-surface">© 2024 SAIKRUPA ENGINEERING WORKS. PRECISION TOLERANCE ±0.005MM.</div>
+<div class="flex gap-element-gap">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-0.5" href="#">Privacy Protocol</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-0.5" href="#">Technical Standards</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-0.5" href="#">Global Logistics</a>
+</div>
+</footer>
+</body></html>

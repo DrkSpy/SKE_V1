@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archive - Saikrupa Engineering Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&amp;family=Noto+Serif:wght@200;300&amp;family=Space+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#757873",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#8d6d2b",
+                        "primary-fixed-dim": "#c7c7c3",
+                        "primary-fixed": "#e3e2df",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-primary": "#c7c7c3",
+                        "outline-variant": "#c5c7c1",
+                        "surface-tint": "#5e5f5c",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#5f5e5e",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "on-tertiary-fixed": "#261900",
+                        "on-primary-fixed": "#1b1c1a",
+                        "primary": "#5e5f5c",
+                        "primary-container": "#f9f8f4",
+                        "on-primary-fixed-variant": "#464744",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-fixed-variant": "#474646",
+                        "secondary-container": "#e5e2e1",
+                        "background": "#f9f9f9",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#454843",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "tertiary": "#775a19",
+                        "secondary-fixed": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#71726f",
+                        "tertiary-container": "#fff7ef",
+                        "surface-container-low": "#f4f3f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#656464",
+                        "tertiary-fixed": "#ffdea5",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "border-width": "0.5px",
+                        "margin-page": "64px",
+                        "element-gap": "24px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "technical-data": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-airy": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "200" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                        "technical-data": ["14px", { "lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-airy": ["16px", { "lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "300" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Enforcing 0.5px borders where standard utilities fall short */
+        .border-micro { border-width: 0.5px; }
+        .border-b-micro { border-bottom-width: 0.5px; }
+        .border-t-micro { border-top-width: 0.5px; }
+        .border-l-micro { border-left-width: 0.5px; }
+
+        @keyframes glideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .glide-up {
+            opacity: 0;
+        }
+        .glide-up.active {
+            animation: glideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+    </style>
+<style>
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.08;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+    </style></head>
+<body class="bg-background text-on-surface font-body-airy antialiased selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed min-h-screen flex flex-col"><div class="grain-overlay shadow-none"></div>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-margin-page py-unit h-20 max-w-full mx-auto bg-background border-b-micro border-outline-variant sticky top-0 z-50">
+<a class="flex items-center" href="#">
+<img alt="Saikrupa Engineering Works" class="h-10 w-auto mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/ADBb0ujBGL3PkDmciu5cNLSB_HVnn_uFE10NJsgslSTBae-oAJPtchGty5cypnUptaifSBw9MVaJofQI1dGOshXWNTA1f7XwBrUAr4025InEIXFj2yT8qS8po4AfYuXXPSbtRbkM1ruuXwC-jrliO6St36SiLCBO96Z3wM3KNF1Qm_zDZ6PndkUw6C6ujaX4AA3O9Mt082bII_fN3pAnFyPfbtmggAtNZwJHhgWyPzkyfiDZNG5VrnEIJ1NdFLneULAfrc1x_NwKydf8vw"/>
+</a>
+<nav class="hidden md:flex gap-element-gap items-center">
+<a class="text-primary border-b-micro border-primary pb-1 font-label-caps text-label-caps uppercase tracking-widest opacity-80 transition-opacity" href="#">The Heritage</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest hover:text-primary transition-colors duration-300" href="#">The Laboratory</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest hover:text-primary transition-colors duration-300" href="#">Technical Briefing</a>
+</nav>
+<div class="flex items-center gap-element-gap">
+<button class="border-micro border-outline-variant px-4 py-2 font-label-caps text-label-caps uppercase text-on-surface hover:bg-surface-variant transition-colors duration-300">
+                Technical Consultation
+            </button>
+<button class="text-on-surface hover:text-primary transition-colors duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full relative">
+<!-- Hero Section -->
+<section class="px-margin-page pt-section-gap pb-[80px] border-b-micro border-outline-variant w-full max-w-[1600px] mx-auto">
+<div class="grid grid-cols-12 gap-element-gap">
+<div class="col-span-12 md:col-span-8 flex flex-col gap-unit">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Document 01. Timeline</span>
+<h1 class="font-display-xl text-display-xl text-on-surface">The Archive</h1>
+<p class="font-body-airy text-body-airy text-on-surface-variant max-w-xl mt-4">
+                        A definitive chronography of twenty-five years dedicated to absolute precision. Each epoch documented below represents a fundamental shift in our manufacturing tolerances and engineering methodologies.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="px-margin-page py-section-gap w-full max-w-[1600px] mx-auto">
+<!-- Global Vertical Axis -->
+<div class="relative w-full border-l-micro border-outline-variant pl-element-gap md:pl-[120px] ml-4 md:ml-[8.33%]">
+<!-- Epoch 01: 1999 -->
+<article class="grid grid-cols-1 md:grid-cols-10 gap-element-gap pb-section-gap relative glide-up">
+<!-- Anchor Point -->
+<div class="absolute w-2 h-micro bg-outline-variant -left-[calc(24px+0.5px)] md:-left-[calc(120px+0.5px)] top-8"></div>
+<div class="col-span-1 md:col-span-3">
+<h2 class="font-display-xl text-display-xl text-on-surface -mt-4">1999</h2>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest block mt-2">Foundation Protocol</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-element-gap">
+<div class="border-t-micro border-outline-variant pt-unit w-full">
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Technical Specification</h3>
+<ul class="font-technical-data text-technical-data text-on-surface-variant space-y-1">
+<li>FACILITY: 2,400 SQ. FT.</li>
+<li>MACHINING: MANUAL LATHE</li>
+<li>TOLERANCE: ±0.05MM</li>
+<li>PRIMARY SECTOR: AUTOMOTIVE</li>
+</ul>
+</div>
+<p class="font-body-airy text-body-airy text-on-surface">
+                            The establishment of the original workshop. Initial operations focused on high-durability components for local automotive assemblies, prioritizing robust structural integrity over microscopic precision.
+                        </p>
+</div>
+<div class="col-span-1 md:col-span-4 border-micro border-outline-variant p-2 bg-surface-container-lowest">
+<div class="w-full h-[300px] bg-surface-variant relative overflow-hidden" data-alt="A stark, high-contrast black and white macro photograph of an early manual milling machine. The raw steel textures and cutting fluid droplets are sharply in focus against a deep, pure black background. The lighting is clinical and directional, emphasizing the heavy industrial nature of the equipment and establishing a historical, blueprint-like aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA720sXJIpC_DB3IfQ6UFCG51zUrVnu7IWflgqDz6Ht_69OIf2w9TfqG-ufnghvQUB53lAM8Lq-IDk1acUu-15MCccXFf8R-pWg-38d-cGrGPTlpPsjgpZyPy7vYy38ImLWtSVGzXAs-A4QM8ZUC0asu0njiMrO0bUqssLP6RoYvD6lCvTzEySeRajBa8qHM8gcqd5-ku8avJYXE9rgaMqiRAzoOpG0AFtQMh_neQgD5b4-z2-QspXxCS8lArfUyh5DbvoN1Z9vK4s'); background-size: cover; background-position: center;">
+</div>
+</div>
+</article>
+<!-- Epoch 02: 2008 -->
+<article class="grid grid-cols-1 md:grid-cols-10 gap-element-gap pb-section-gap relative glide-up">
+<div class="absolute w-2 h-micro bg-outline-variant -left-[calc(24px+0.5px)] md:-left-[calc(120px+0.5px)] top-8"></div>
+<div class="col-span-1 md:col-span-3">
+<h2 class="font-display-xl text-display-xl text-on-surface -mt-4">2008</h2>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest block mt-2">CNC Integration</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-element-gap">
+<div class="border-t-micro border-outline-variant pt-unit w-full">
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Technical Specification</h3>
+<ul class="font-technical-data text-technical-data text-on-surface-variant space-y-1">
+<li>SYSTEM: 3-AXIS CNC</li>
+<li>MATERIAL: AEROSPACE ALUM.</li>
+<li>TOLERANCE: ±0.01MM</li>
+<li>CERTIFICATION: ISO 9001</li>
+</ul>
+</div>
+<p class="font-body-airy text-body-airy text-on-surface">
+                            The transition to automated numerical control. This era marked a paradigm shift in repeatability, allowing for complex geometries required by early-stage aerospace contractors.
+                        </p>
+</div>
+<div class="col-span-1 md:col-span-4 border-micro border-outline-variant p-2 bg-surface-container-lowest">
+<div class="w-full h-[300px] bg-surface-variant relative overflow-hidden" data-alt="A pristine, highly detailed close-up of a titanium aerospace component resting on technical drafting paper. The component features complex milled geometries and a flawless, reflective finish. The lighting is bright, diffused, and shadowless, creating a sterile laboratory atmosphere. The color palette is minimal, dominated by silver metallic tones and pristine white backgrounds." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCJczvrgizyLwawhJXYSHAY290v3oMUFL_N-YVQJ0OHbA1SpRC9G1demE8q38QuAiVQyQUqgqFcasPMPSDOC1YFyYW1ch5FQoqNrP84dnVUgTfawlv0LwJjtN7RUNq79fBzQ_vugkJtRvopuMcQ9tM39wuvGyyX8IHQqMLkLshumQIsUEpmnVt6FjB4gMXaRWZ_GXM5eKUA41ADt55BP0WsgK4_lmfrVPNuCp3RGb633lqs_fTnm-ffPKIiqTxPyqcgGwwxhMZoH0'); background-size: cover; background-position: center;">
+</div>
+</div>
+</article>
+<!-- Epoch 03: 2024 -->
+<article class="grid grid-cols-1 md:grid-cols-10 gap-element-gap relative glide-up">
+<div class="absolute w-2 h-micro bg-outline-variant -left-[calc(24px+0.5px)] md:-left-[calc(120px+0.5px)] top-8"></div>
+<div class="col-span-1 md:col-span-3">
+<h2 class="font-display-xl text-display-xl text-on-surface -mt-4">2024</h2>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest block mt-2">The Monolith Era</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-element-gap">
+<div class="border-t-micro border-outline-variant pt-unit w-full">
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Technical Specification</h3>
+<ul class="font-technical-data text-technical-data text-on-surface-variant space-y-1">
+<li>SYSTEM: 5-AXIS SIMULTANEOUS</li>
+<li>ENVIRONMENT: CLIMATE ISO 7</li>
+<li>TOLERANCE: ±0.005MM</li>
+<li>PRIMARY SECTOR: MEDICAL/SPACE</li>
+</ul>
+</div>
+<p class="font-body-airy text-body-airy text-on-surface">
+                            Current state of operations. Utilizing hyper-advanced 5-axis monolithic milling centers within temperature-controlled clean rooms to achieve sub-micron precision for critical surgical and satellite applications.
+                        </p>
+</div>
+<div class="col-span-1 md:col-span-4 border-micro border-outline-variant p-2 bg-surface-container-lowest">
+<div class="w-full h-[300px] bg-surface-variant relative overflow-hidden" data-alt="An ultra-macro photograph of a gold-plated medical micro-component held by robotic precision tweezers. The depth of field is incredibly shallow, focusing only on the microscopic milled details of the gold surface. The background is an expansive, soft, off-white void, emphasizing the jewel-like quality and absolute perfection of the engineered part in a high-end minimalist setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmzVvMJnvUubPz1ajVpQuEB5VcEKg6onGSVtcCZPG93MsAfzhOj7U-XtYt0pjNRV5UaC4gbwDktKKuxEKjnhnuqQxSpcIRTp8YhFSkZO1YbNhtCCrI5TO9_VG3iMACSeDAVjfWdo_xz-872gx48gP_gSOPgqUiZMq7SF2jrtGJ3_y5puEjMDEFnz_OnKj0Ba5Nf7Ai70NKjwe7QgRky-HfKs8FUkQko2UNXxYRhMV2d9lcGbVbvzai05q3u6OH3ybTI94fNHSK25k'); background-size: cover; background-position: center;">
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center w-full px-margin-page py-element-gap gap-unit bg-background border-t-micro border-outline-variant mt-auto">
+<div class="font-technical-data text-technical-data text-on-surface-variant">
+            © 2024 SAIKRUPA ENGINEERING WORKS. PRECISION TOLERANCE ±0.005MM.
+        </div>
+<nav class="flex gap-element-gap">
+<a class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest hover:underline decoration-micro transition-all duration-500 ease-in-out" href="#">Privacy Protocol</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest hover:underline decoration-micro transition-all duration-500 ease-in-out" href="#">Technical Standards</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest hover:underline decoration-micro transition-all duration-500 ease-in-out" href="#">Global Logistics</a>
+</nav>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.glide-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+</body></html>

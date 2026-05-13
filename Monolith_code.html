@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAIKRUPA ENGINEERING WORKS - THE MONOLITH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&amp;family=Noto+Serif:wght@200;300;400;600;700;800;900&amp;family=Space+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#757873",
+                      "tertiary-fixed-dim": "#e9c176",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#8d6d2b",
+                      "primary-fixed-dim": "#c7c7c3",
+                      "primary-fixed": "#e3e2df",
+                      "surface-container-highest": "#e2e2e2",
+                      "inverse-primary": "#c7c7c3",
+                      "outline-variant": "#c5c7c1",
+                      "surface-tint": "#5e5f5c",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "secondary": "#5f5e5e",
+                      "surface-dim": "#dadada",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "on-tertiary-fixed": "#261900",
+                      "on-primary-fixed": "#1b1c1a",
+                      "primary": "#5e5f5c",
+                      "primary-container": "#f9f8f4",
+                      "on-primary-fixed-variant": "#464744",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-fixed-variant": "#474646",
+                      "secondary-container": "#e5e2e1",
+                      "background": "#f9f9f9",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-variant": "#e2e2e2",
+                      "on-surface": "#1a1c1c",
+                      "inverse-surface": "#2f3131",
+                      "on-surface-variant": "#454843",
+                      "secondary-fixed-dim": "#c9c6c5",
+                      "tertiary": "#775a19",
+                      "secondary-fixed": "#e5e2e1",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#71726f",
+                      "tertiary-container": "#fff7ef",
+                      "surface-container-low": "#f4f3f3",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#656464",
+                      "tertiary-fixed": "#ffdea5",
+                      "on-secondary": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "surface-container": "#eeeeee",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-background": "#1a1c1c",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "border-width": "0.5px",
+                      "margin-page": "64px",
+                      "element-gap": "24px",
+                      "section-gap": "160px"
+              },
+              "fontFamily": {
+                      "display-xl": [
+                              "Noto Serif"
+                      ],
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "technical-data": [
+                              "Space Grotesk"
+                      ],
+                      "label-caps": [
+                              "Space Grotesk"
+                      ],
+                      "body-airy": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "200"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "technical-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-airy": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.8",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+        
+        /* Reveal Animations */
+        .reveal {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+      </style>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if(entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+          
+          document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased font-body-airy"><div class="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] mix-blend-multiply dark:mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0 z-50 w-full transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-page py-unit h-20 max-w-full mx-auto reveal">
+<!-- Brand -->
+<a class="flex items-center opacity-90 hover:opacity-100 transition-opacity" href="#">
+<img alt="Saikrupa Engineering Works" class="h-10 w-auto mix-blend-multiply dark:mix-blend-screen" src="https://lh3.googleusercontent.com/aida/ADBb0ujBGL3PkDmciu5cNLSB_HVnn_uFE10NJsgslSTBae-oAJPtchGty5cypnUptaifSBw9MVaJofQI1dGOshXWNTA1f7XwBrUAr4025InEIXFj2yT8qS8po4AfYuXXPSbtRbkM1ruuXwC-jrliO6St36SiLCBO96Z3wM3KNF1Qm_zDZ6PndkUw6C6ujaX4AA3O9Mt082bII_fN3pAnFyPfbtmggAtNZwJHhgWyPzkyfiDZNG5VrnEIJ1NdFLneULAfrc1x_NwKydf8vw"/>
+</a>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex gap-element-gap items-center h-full">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300 reveal delay-100" href="#">The Heritage</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300 reveal delay-200" href="#">The Laboratory</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-300 reveal delay-300" href="#">Technical Briefing</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6 reveal delay-400">
+<a class="hidden md:flex font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim hover:text-tertiary transition-colors duration-300 items-center gap-2 border-b-border-width border-transparent hover:border-primary pb-1" href="#">
+                    Technical Consultation
+                </a>
+<button aria-label="Toggle Dark Mode" class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col relative w-full h-[calc(100vh-80px)] overflow-hidden">
+<!-- Cinematic Hero Section -->
+<section class="relative w-full h-full flex items-center justify-center bg-primary-container px-margin-page">
+<!-- Grid Lines Background -->
+<div class="absolute inset-0 pointer-events-none opacity-20 reveal">
+<div class="w-full h-full border-x border-outline-variant max-w-7xl mx-auto grid grid-cols-3">
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+<div></div>
+</div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-element-gap">
+<!-- Typography Column -->
+<div class="w-full md:w-1/2 flex flex-col gap-unit pl-0 md:pl-12 border-l-border-width border-outline-variant py-12">
+<div class="flex flex-col gap-2 reveal delay-100">
+<span class="font-technical-data text-technical-data text-on-surface-variant uppercase tracking-widest">Model: PX-900 / Alpha</span>
+<h1 class="font-display-xl text-display-xl text-on-surface uppercase leading-none tracking-tighter">THE<br/>MONOLITH</h1>
+</div>
+<p class="font-body-airy text-body-airy text-on-surface-variant mt-8 max-w-md reveal delay-200">
+                        Engineering perfection down to the microscopic level. A testament to precision, built for environments where failure is not a variable.
+                    </p>
+<div class="mt-12 reveal delay-300">
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps text-on-primary bg-on-surface px-8 py-4 border border-on-surface hover:bg-transparent hover:text-on-surface transition-all duration-500 uppercase tracking-[0.2em]" href="#">
+                            Examine Specs
+                        </a>
+</div>
+</div>
+<!-- Imagery Column (Mechanical Pulley as Jewelry) -->
+<div class="w-full md:w-1/2 h-[614px] md:h-[819px] flex items-center justify-center relative reveal delay-400">
+<!-- Image Placeholder with structural border -->
+<div class="relative w-full h-full border border-outline-variant bg-surface-container-lowest p-8 flex items-center justify-center overflow-hidden group">
+<!-- Technical overlay markings -->
+<div class="absolute top-4 left-4 font-technical-data text-label-caps text-outline-variant reveal delay-500">DIA: 450.005mm</div>
+<div class="absolute bottom-4 right-4 font-technical-data text-label-caps text-outline-variant reveal delay-500">TOL: ±0.001</div>
+<!-- Center crosshair -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30 reveal delay-200">
+<div class="w-full h-[0.5px] bg-outline-variant absolute"></div>
+<div class="h-full w-[0.5px] bg-outline-variant absolute"></div>
+</div>
+<img alt="Precision Engineered Pulley" class="object-contain w-[80%] h-[80%] z-10 transition-transform duration-1000 ease-in-out group-hover:scale-105" data-alt="Macro photography of a highly polished, precision-machined mechanical pulley rendered as a piece of high-end jewelry. The metal is gleaming silver with subtle gold structural accents, resting perfectly balanced in a minimalist, brilliantly lit clinical off-white studio environment. The depth of field is shallow, blurring the pristine white background while emphasizing the flawless, microscopic tolerances of the metalwork. The lighting is high-key, casting no harsh shadows, evoking a sense of absolute purity and aerospace-grade engineering perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Li9mUjVuzecY0A2j5lp1WbLQNME2NkzHrZ-bxfhW8SG6xmGFYvd0adDvFNHjkrfJqcX_6NEfeTEeygRsBQ1sTqT3aMcMOM-7cS8l5oQuB8mY8kdSZ-AUde-_QPa4ay3uq2Lb0JEzWY5H8Kcr55KghpxtvC0SRnV76Jt729JSedPbmnlz7t9n5G8HTsRjoQzT7GPjR1mny7hJjopPhXK5xZTksJ2O1C0hKbT-B6v0N7edRQBkMAZauhseLpW7ETQ7_ND_SpOCl_c" style="filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.05)); mix-blend-mode: multiply;"/>
+</div>
+</div>
+</div>
+<!-- Absolute positioned technical footer inside hero -->
+<div class="absolute bottom-0 left-0 w-full border-t border-outline-variant px-margin-page py-4 flex justify-between items-center bg-primary-container z-20 reveal delay-500">
+<span class="font-technical-data text-label-caps text-on-surface-variant">STATE: OPTIMAL</span>
+<span class="font-technical-data text-label-caps text-on-surface-variant">SYS: ONLINE</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-inverse-surface border-t border-outline-variant dark:border-outline w-full z-40 relative">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-page py-element-gap gap-unit max-w-7xl mx-auto reveal">
+<div class="font-display-xl text-label-caps text-on-surface dark:text-inverse-on-surface opacity-80">
+                © 2024 SAIKRUPA ENGINEERING WORKS. PRECISION TOLERANCE ±0.005MM.
+            </div>
+<nav class="flex gap-6 items-center reveal delay-200">
+<a class="font-technical-data text-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out" href="#">Privacy Protocol</a>
+<a class="font-technical-data text-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out" href="#">Technical Standards</a>
+<a class="font-technical-data text-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out" href="#">Global Logistics</a>
+</nav>
+</div>
+</footer>
+</body></html>
