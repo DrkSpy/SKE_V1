@@ -70,7 +70,9 @@ export default function Laboratory() {
         >
           <div className="border-b-[0.5px] border-outline-variant dark:border-outline pb-unit mb-unit flex justify-between items-center">
             <h3 className="font-label-caps text-label-caps silver-accent">Manual Engineering Fleet</h3>
-            <span className="material-symbols-outlined text-on-surface-variant dark:text-secondary-fixed-dim" style={{fontSize: "16px"}}>build</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-on-surface-variant dark:text-secondary-fixed-dim flex-shrink-0">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"></path>
+            </svg>
           </div>
           <div className="flex-grow flex flex-col justify-center space-y-element-gap">
             <div>

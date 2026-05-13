@@ -134,13 +134,13 @@ export default function Monolith() {
           <div className="bg-surface-container-lowest dark:bg-surface-dim p-8 md:p-16 flex flex-col items-start hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-colors group">
             <h3 className="font-display-xl text-3xl md:text-4xl text-on-surface dark:text-inverse-on-surface">The Machinery Matrix</h3>
             <p className="font-body-airy text-on-surface-variant dark:text-primary-fixed-dim mt-4 max-w-md text-base md:text-lg">Analyze our production capabilities, from 12-station CNC turning centers to highly specialized manual lathes.</p>
-            <a href="/laboratory" className="mt-8 md:mt-12 font-label-caps tracking-widest text-tertiary uppercase group-hover:text-on-surface dark:group-hover:text-inverse-on-surface transition-colors flex items-center gap-2 text-xs md:text-sm">Enter Laboratory <span className="material-symbols-outlined">east</span></a>
+            <a href="/laboratory" className="mt-8 md:mt-12 font-label-caps tracking-widest text-tertiary uppercase group-hover:text-on-surface dark:group-hover:text-inverse-on-surface transition-colors flex items-center gap-2 text-xs md:text-sm">Enter Laboratory <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
           </div>
 
           <div className="bg-surface-container-lowest dark:bg-surface-dim p-8 md:p-16 flex flex-col items-start hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-colors group">
             <h3 className="font-display-xl text-3xl md:text-4xl text-on-surface dark:text-inverse-on-surface">Component Catalog</h3>
             <p className="font-body-airy text-on-surface-variant dark:text-primary-fixed-dim mt-4 max-w-md text-base md:text-lg">Examine our precision-engineered Bush Pulleys, Corner Pulleys, and Flat Belt Pulleys.</p>
-            <a href="/products" className="mt-8 md:mt-12 font-label-caps tracking-widest text-tertiary uppercase group-hover:text-on-surface dark:group-hover:text-inverse-on-surface transition-colors flex items-center gap-2 text-xs md:text-sm">View Inventory <span className="material-symbols-outlined">east</span></a>
+            <a href="/products" className="mt-8 md:mt-12 font-label-caps tracking-widest text-tertiary uppercase group-hover:text-on-surface dark:group-hover:text-inverse-on-surface transition-colors flex items-center gap-2 text-xs md:text-sm">View Inventory <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
           </div>
 
         </div>
