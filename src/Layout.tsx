@@ -108,7 +108,7 @@ export default function Layout() {
         {/* Contact Information Section */}
         <div className="w-full px-6 md:px-margin-page py-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-outline-variant/30">
           <div className="flex flex-col gap-4">
-            <h3 className="font-label-caps text-xs text-tertiary uppercase tracking-widest">Global Headquarters</h3>
+            <h3 className="font-label-caps text-xs text-tertiary uppercase tracking-widest">Manufacturing Facility</h3>
             <p className="font-body-airy text-sm text-on-surface-variant dark:text-primary-fixed-dim leading-relaxed">
               Sai Krupa Engineering Works<br />
               Rd Number 6, Udhana GIDC,<br />
@@ -144,7 +144,7 @@ export default function Layout() {
           <nav className="flex flex-wrap justify-center md:justify-end gap-6 items-center">
             <a href="#" className="font-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out">Privacy Protocol</a>
             <a href="#" className="font-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out">Technical Standards</a>
-            <a href="#" className="font-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out">Global Logistics</a>
+            <a href="#" className="font-technical-data font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:underline decoration-border-width transition-all duration-500 ease-in-out">Logistics & Shipping</a>
           </nav>
         </div>
       </footer>

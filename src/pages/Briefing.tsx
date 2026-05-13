@@ -10,7 +10,7 @@ export default function Briefing() {
         className="w-full max-w-4xl mx-auto flex flex-col gap-16"
       >
         <div className="flex flex-col gap-4 border-b border-outline-variant pb-8 text-center items-center">
-          <span className="font-technical-data text-label-caps text-tertiary tracking-[0.2em] uppercase">Global Logistics & Supply</span>
+          <span className="font-technical-data text-label-caps text-tertiary tracking-[0.2em] uppercase">Engineering Consultation</span>
           <h1 className="font-display-xl text-4xl md:text-5xl text-on-surface dark:text-inverse-on-surface uppercase leading-none tracking-tighter">Technical Briefing</h1>
           <p className="font-body-airy text-on-surface-variant dark:text-primary-fixed-dim mt-4 max-w-xl text-center">
             Submit your specifications below. Our engineering team will review the precise tolerances and requirements, and respond within one business cycle.
