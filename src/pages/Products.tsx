@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import jockeyPulleyImg from "../assets/Jockey_pulley.png";
 
 export default function Products() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
@@ -18,7 +19,7 @@ export default function Products() {
     {
       title: "Jockey Pulley",
       spec: "Dynamic Tension Control",
-      image: "src/assets/Jockey_Pulley.png",
+      image: jockeyPulleyImg,
       points: [
         "Continuous belt tension regulation under variable loads.",
         "Anti-vibration mounting architecture for smooth operation.",
