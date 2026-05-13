@@ -42,7 +42,7 @@ export default function CustomCursor() {
     <>
       {/* Tiny solid precision dot (instant tracking) */}
       <motion.div 
-        className="fixed top-0 left-0 w-2 h-2 bg-[#C5A059] rounded-full pointer-events-none z-[10000]"
+        className="hidden md:block fixed top-0 left-0 w-2 h-2 bg-[#C5A059] rounded-full pointer-events-none z-[10000]"
         animate={{ 
           x: mousePosition.x - 4, 
           y: mousePosition.y - 4,
@@ -53,7 +53,7 @@ export default function CustomCursor() {
       
       {/* Trailing targeting ring (spring physics) */}
       <motion.div 
-        className="fixed top-0 left-0 w-12 h-12 border-[0.5px] border-[#C5A059] rounded-full pointer-events-none z-[9999]"
+        className="hidden md:block fixed top-0 left-0 w-12 h-12 border-[0.5px] border-[#C5A059] rounded-full pointer-events-none z-[9999]"
         style={{ 
           x: smoothX, 
           y: smoothY, 

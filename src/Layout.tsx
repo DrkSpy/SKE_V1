@@ -18,7 +18,7 @@ export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen relative cursor-none">
+    <div className="flex flex-col min-h-screen relative md:cursor-none">
       <CustomCursor />
       {/* Background noise filter for texture */}
       <div
