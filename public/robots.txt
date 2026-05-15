@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saikrupaengineering.in/sitemap.xml
