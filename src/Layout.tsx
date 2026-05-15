@@ -38,26 +38,26 @@ export default function Layout() {
           <nav className="hidden md:flex gap-element-gap items-center h-full">
             <Link to="/products" className="group relative font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-500 py-1">
               Products
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
+              <span aria-hidden="true" className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
             </Link>
             <Link to="/archive" className="group relative font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-500 py-1">
               The History
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
+              <span aria-hidden="true" className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
             </Link>
             <Link to="/laboratory" className="group relative font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-500 py-1">
               The Laboratory
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
+              <span aria-hidden="true" className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
             </Link>
             <Link to="/briefing" className="group relative font-label-caps text-label-caps text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-500 py-1">
               Technical Briefing
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
+              <span aria-hidden="true" className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary dark:bg-tertiary-fixed-dim transition-all duration-500 ease-out group-hover:w-full"></span>
             </Link>
           </nav>
 
           <div className="flex items-center gap-4 md:gap-6">
             <Link to="/briefing" className="group relative hidden md:flex font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim hover:text-tertiary transition-colors duration-500 items-center gap-2 py-1">
               Technical Consultation
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 ease-out group-hover:w-full"></span>
+              <span aria-hidden="true" className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 ease-out group-hover:w-full"></span>
             </Link>
             <button
               onClick={() => setDarkMode(!darkMode)}
